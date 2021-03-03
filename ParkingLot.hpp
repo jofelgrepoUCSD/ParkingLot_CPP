@@ -23,7 +23,7 @@ class ParkingLot{
         std::map <int,std::string> parking_history;
         // Functions
         int get_NewParkingTicket(Vehicle &v);
-        bool isFull(VehicleType);
+        bool isFull(Vehicle &v);
         void incrementSpot(Vehicle &v);
         void decrementSpot(VehicleType);
         int leaveParking(int ticketNumber);
