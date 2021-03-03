@@ -22,12 +22,9 @@ int main(){
 
     // Car example
     int vehicle_type = 2;
-
     Car *v = new Car(1,vehicle_type,3,4);
-
     int ticketNumber = parking->get_NewParkingTicket(*v);
     std::cout << ticketNumber << std::endl;
-
 
 
 
