@@ -27,7 +27,7 @@ std::string Vehicle:: get_TypeSting() {
     int vehicle_type = this->get_Type();
     switch(vehicle_type) {
         case 1 :
-            return "MotorCycle";
+            return "MotorBike";
         case 2 :
             return "Car";
         case 3 :

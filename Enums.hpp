@@ -2,10 +2,9 @@
 #define ENUMS_H
 
 enum VehicleType {
-   CAR = 1,
-   TRUCK = 2,
-   VAN = 3,
-   MOTORBIKE = 4
+   MOTORBIKE = 1,
+   CAR = 2,
+   TRUCK = 3,
 };
 
 enum ParkingSpotType {

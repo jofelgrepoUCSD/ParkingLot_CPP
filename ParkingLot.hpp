@@ -25,7 +25,7 @@ class ParkingLot{
         int get_NewParkingTicket(Vehicle &v);
         bool isFull(Vehicle &v);
         void incrementSpot(Vehicle &v);
-        void decrementSpot(VehicleType);
+        void decrementSpot(std::string);
         int leaveParking(int ticketNumber);
         std::string getEmptySpot();
 };

@@ -22,9 +22,10 @@ ParkingLot::ParkingLot(){
 
 int ParkingLot::get_NewParkingTicket(Vehicle &v){
 
-   int full = 9999999;   
    if (this->isFull(v)){
-      return full;
+      std::cout << "Sorry All Slots Are Taken\n " << endl;
+      std::cout << "-------------------------\n " << endl;
+      return 0;
    }
    // Tickets now depend on the time you parked
    long value_ms = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now()).time_since_epoch()).count();
@@ -56,6 +57,18 @@ void ParkingLot::incrementSpot(Vehicle &v){
          break;
    }
 }
+
+void ParkingLot::decrementSpot(string s){
+   if (s == "MotorBike"){
+      this->small_count -= 1;
+   } else if (s == "Car"){
+      this->compact_count -= 1;
+   } else {
+      this->large_count -= 1;
+   }
+}
+
+
 
 bool ParkingLot::isFull(Vehicle &v){
    
@@ -103,7 +116,19 @@ std::string ParkingLot::getEmptySpot(){
    return message;
 }
 
+int ParkingLot::leaveParking(int ticketNumber){
 
+   if ( !(this->active_tickets.find(ticketNumber) == this->active_tickets.end()) ) {
+      auto vehicle = this->active_tickets[ticketNumber];
+      this->decrementSpot(vehicle);
+      this->active_tickets.erase(ticketNumber);
+   } else {
+      // not found
+   }
+   return 1;
+
+
+}
 
 
 
